@@ -1,11 +1,15 @@
-import { render } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { render, screen } from "@testing-library/react";
+import { describe, expect, it, beforeEach } from "vitest";
 import App from "./App";
 
 describe("App", () => {
-  it("renders the root component", () => {
-    const { container } = render(<App />);
+  beforeEach(() => {
+    localStorage.clear();
+  });
 
-    expect(container).toBeEmptyDOMElement();
+  it("redirects to login page when no auth token is present", () => {
+    render(<App />);
+
+    expect(screen.getByText(/login page/i)).toBeInTheDocument();
   });
 });

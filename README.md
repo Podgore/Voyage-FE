@@ -38,3 +38,9 @@ npm run preview
 ```bash
 npm run lint
 ```
+
+## App Shell
+
+- React Router configured with a public route (`/login`) and protected routes (wrapped by `ProtectedRoute`)
+- Auth token stored in `localStorage` and automatically attached to API requests via axios interceptor (`src/api/axios.ts`)
+- Basic layout with navigation and room switcher placeholder
