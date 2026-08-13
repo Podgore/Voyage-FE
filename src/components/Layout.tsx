@@ -1,14 +1,15 @@
 import { Outlet, Link } from "react-router-dom";
+import "./Layout.css";
 
 export function Layout() {
   return (
     <div>
-      <nav style={{ padding: "1rem", borderBottom: "1px solid #ccc" }}>
+      <nav className="layout-nav">
         <Link to="/">Home</Link>
         {" | "}
         <span>Room switcher (placeholder)</span>
       </nav>
-      <main style={{ padding: "1rem" }}>
+      <main className="layout-main">
         <Outlet />
       </main>
     </div>

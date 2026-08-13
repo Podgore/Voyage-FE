@@ -1,17 +1,12 @@
 import { useState, type ReactNode } from "react";
 import { AuthContext } from "./AuthContext.context";
+import { setStoredToken, getToken } from "./tokenStore";
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [token, setTokenState] = useState<string | null>(
-    localStorage.getItem("accessToken"),
-  );
+  const [token, setTokenState] = useState<string | null>(getToken());
 
   const setToken = (newToken: string | null) => {
-    if (newToken) {
-      localStorage.setItem("accessToken", newToken);
-    } else {
-      localStorage.removeItem("accessToken");
-    }
+    setStoredToken(newToken);
     setTokenState(newToken);
   };
 
