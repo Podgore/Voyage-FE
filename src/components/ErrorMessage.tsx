@@ -2,6 +2,6 @@ interface ErrorMessageProps {
   message: string;
 }
 
-export function ErrorMessage({ message }: ErrorMessageProps) {
+export const ErrorMessage = ({ message }: ErrorMessageProps) => {
   return <div style={{ color: "red" }}>Error: {message}</div>;
-}
+};

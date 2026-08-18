@@ -3,7 +3,7 @@ import { fetchHealth } from "../api/health";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import { ErrorMessage } from "../components/ErrorMessage";
 
-export function DashboardPage() {
+export const DashboardPage = () => {
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["health"],
     queryFn: fetchHealth,
@@ -18,4 +18,4 @@ export function DashboardPage() {
       <p>Backend status: {data?.status}</p>
     </div>
   );
-}
+};
