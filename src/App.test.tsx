@@ -1,11 +1,11 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import App from "./App";
 
 describe("App", () => {
-  it("renders the root component", () => {
-    const { container } = render(<App />);
+  it("redirects to login page when no auth token is present", () => {
+    render(<App />);
 
-    expect(container).toBeEmptyDOMElement();
+    expect(screen.getByText(/login page/i)).toBeInTheDocument();
   });
 });
