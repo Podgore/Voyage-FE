@@ -1,7 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
 import "./Layout.css";
 
-export function Layout() {
+export const Layout = () => {
   return (
     <div>
       <nav className="layout-nav">
@@ -14,4 +14,4 @@ export function Layout() {
       </main>
     </div>
   );
-}
+};
