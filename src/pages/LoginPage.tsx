@@ -1,24 +1,17 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useState } from "react";
 import { Button, Input, Modal } from "../components/ui";
+import "./LoginPage.css";
 
 export const LoginPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <Box
-      component="section"
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        px: 3,
-        py: 8,
-      }}
-    >
-      <Stack spacing={3} sx={{ maxWidth: 400, width: "100%" }}>
+    <Box component="section" className="login-page">
+      <div className="login-page__form">
         <div>
           <Typography variant="h1">Login page</Typography>
-          <Typography color="text.secondary" sx={{ mt: 1 }}>
+          <Typography className="login-page__description">
             Sign in to access your rooms.
           </Typography>
         </div>
@@ -35,7 +28,7 @@ export const LoginPage = () => {
         >
           <Typography>Authentication will be added in a future</Typography>
         </Modal>
-      </Stack>
+      </div>
     </Box>
   );
 };

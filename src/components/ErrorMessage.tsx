@@ -1,7 +1,9 @@
+import "./ErrorMessage.css";
+
 interface ErrorMessageProps {
   message: string;
 }
 
 export const ErrorMessage = ({ message }: ErrorMessageProps) => {
-  return <div style={{ color: "red" }}>Error: {message}</div>;
+  return <div className="error-message">Error: {message}</div>;
 };
